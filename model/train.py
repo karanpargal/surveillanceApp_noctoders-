@@ -137,3 +137,7 @@ def evaluate():
     plt.xlabel('frame t')
     plt.show()
 
+def main():
+    evaluate()
+
+main()
