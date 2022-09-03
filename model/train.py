@@ -1,4 +1,4 @@
-from keras.preprocessing.image import img_to_array,load_img
+from tensorflow.keras.utils import img_to_array,load_img
 from os import listdir
 from os.path import isfile, join, isdir
 import numpy as np
@@ -6,7 +6,7 @@ from PIL import Image
 import keras
 from keras.layers import Conv2DTranspose, ConvLSTM2D, BatchNormalization, TimeDistributed, Conv2D
 from keras.models import Sequential, load_model
-from keras_layer_normalization import LayerNormalization
+from keras.layers import LayerNormalization
 import matplotlib.pyplot as plt
 
 train_dataset_path = './datasets/UCSD_Dataset/UCSDped1/Train'
