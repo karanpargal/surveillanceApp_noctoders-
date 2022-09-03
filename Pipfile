@@ -8,6 +8,7 @@ flask = "*"
 flask-cors = "*"
 pillow = "*"
 tensorflow = "*"
+keras = "*"
 
 [dev-packages]
 
