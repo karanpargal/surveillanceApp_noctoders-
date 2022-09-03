@@ -8,7 +8,7 @@ from PIL import Image, ImageOps
 app = Flask(__name__) # new
 CORS(app) # new
 
-@app.route('/upload' , methods=['POST'])
+@app.route('/upload', methods=['POST'])
 def upload():
     model = load_model('model/model.h5', compile=False)
     test_dir='./test_seq'
@@ -26,5 +26,9 @@ def upload():
     sequences_reconstruction_cost = np.array([np.linalg.norm(np.subtract(frames[i],reconstructed_sequences[i])) for i in range(0,20)])
     sa = (sequences_reconstruction_cost - np.min(sequences_reconstruction_cost)) / np.max(sequences_reconstruction_cost)
     sr = 1.0 - sa
+
+    str_sr = ""
+    for i in sr:
+        str_sr+= (str(i)+"\n")
     
-    return {'message':sr}
+    return {'message':str_sr}

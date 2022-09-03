@@ -20,4 +20,8 @@ sequences_reconstruction_cost = np.array([np.linalg.norm(np.subtract(frames[i],r
 sa = (sequences_reconstruction_cost - np.min(sequences_reconstruction_cost)) / np.max(sequences_reconstruction_cost)
 sr = 1.0 - sa
 
-print(sr)
+str_sr = ""
+for i in sr:
+    str_sr+= (str(i)+"\n")
+
+print(str_sr)
