@@ -22,7 +22,7 @@ def get_clips_by_stride(stride, frames_list, sequence_size):
     stride : int
         The distance between two consecutive frames
     frames_list : list
-        A list of sorted frames of shape 256 X 256
+        A list of sorted frames of shape 128 X 128
     sequence_size: int
         The size of the lstm sequence
     Returns
@@ -32,7 +32,7 @@ def get_clips_by_stride(stride, frames_list, sequence_size):
     """
     clips = []
     sz = len(frames_list)
-    clip = np.zeros(shape=(sequence_size, 256, 256, 1))
+    clip = np.zeros(shape=(sequence_size, 128, 128, 1))
     cnt = 0
     for start in range(0, stride):
         for i in range(start, sz, stride):
@@ -58,8 +58,8 @@ def get_training_set():
             for c in sorted(listdir(directory_path)):
                 img_path = join(directory_path, c)
                 if str(img_path)[-3:] == "tif":
-                    img = Image.open(img_path).resize((256, 256))
-                    img = np.array(img, dtype=np.float32) / 256.0
+                    img = Image.open(img_path).resize((128, 128))
+                    img = np.array(img, dtype=np.float32) / 128.0
                     all_frames.append(img)
             for stride in range(1, 3):
                 clips.extend(get_clips_by_stride(stride=stride, frames_list=all_frames, sequence_size=10))
@@ -77,7 +77,7 @@ def get_model(reload_model=True):
     training_set = get_training_set()
     training_set = np.array(training_set)
     seq = Sequential()
-    seq.add(TimeDistributed(Conv2D(128, (11, 11), strides=4, padding="same"), batch_input_shape=(None, 10, 256, 256, 1)))
+    seq.add(TimeDistributed(Conv2D(128, (11, 11), strides=4, padding="same"), batch_input_shape=(None, 10, 128, 128, 1)))
     seq.add(LayerNormalization())
     seq.add(TimeDistributed(Conv2D(64, (5, 5), strides=2, padding="same")))
     seq.add(LayerNormalization())
@@ -104,12 +104,12 @@ def get_model(reload_model=True):
 
 def get_single_test():
     sz = 200
-    test = np.zeros(shape=(sz, 256, 256, 1))
+    test = np.zeros(shape=(sz, 128, 128, 1))
     cnt = 0
     for f in sorted(listdir(test_dataset_path)):
         if str(join(test_dataset_path, f))[-3:] == "tif":
-            img = Image.open(join(test_dataset_path, f)).resize((256, 256))
-            img = np.array(img, dtype=np.float32) / 256.0
+            img = Image.open(join(test_dataset_path, f)).resize((128, 128))
+            img = np.array(img, dtype=np.float32) / 128.0
             test[cnt, :, :, 0] = img
             cnt = cnt + 1
     return test
@@ -120,9 +120,9 @@ def evaluate():
     test = get_single_test()
     print("got test")
     sz = test.shape[0] - 10
-    sequences = np.zeros((sz, 10, 256, 256, 1))
+    sequences = np.zeros((sz, 10, 128, 128, 1))
     for i in range(0, sz):
-        clip = np.zeros((10, 256, 256, 1))
+        clip = np.zeros((10, 128, 128, 1))
         for j in range(0, 10):
             clip[j] = test[i + j, :, :, :]
         sequences[i] = clip
