@@ -89,35 +89,46 @@ const Home = () => {
         </nav>
 
         <section>
-          <div className="p-10 text-2xl">About the Project</div>
-          <div></div>
+          <div className="p-10 text-2xl font-semibold text-teal-200">
+            About the Project
+          </div>
+          <div className="px-10 text-xl">
+            Our model checks the surveillance footages and uses a model which is
+            made using LSTM Convolutional Autoencoder. It will alert the
+            security guard about any event which can be considered as an
+            anomaly.
+          </div>
         </section>
 
         <section>
-          <div className="p-10 text-2xl">Working</div>
-          <form onSubmit={onSubmit}>
-            <div className="custom-file">
+          <div className="p-10 text-2xl text-teal-200">Working</div>
+          <div className="px-10">
+            <form onSubmit={onSubmit}>
+              <div className="custom-file">
+                <input
+                  type="file"
+                  className="custom-file-input"
+                  id="customFile"
+                  onChange={onChange}
+                />
+                <label className="custom-file-label" htmlFor="customFile">
+                  {filename}
+                </label>
+              </div>
               <input
-                type="file"
-                className="custom-file-input"
-                id="customFile"
-                onChange={onChange}
+                type="submit"
+                value="Upload"
+                className="btn btn-primary btm-block mt-4 bg-teal-200 text-black rounded-lg px-5 py-3"
               />
-              <label className="custom-file-label" htmlFor="customFile">
-                {filename}
-              </label>
-            </div>
-            <input
-              type="submit"
-              value="Upload"
-              className="btn btn-primary btm-block mt-4"
-            />
-          </form>
-          {prediction && <h1>{prediction.message}</h1>}
+            </form>
+            {prediction && <h1>{prediction.message}</h1>}
+          </div>
         </section>
 
         <section>
-          <div className="p-10 text-2xl">About the Team</div>
+          <div className="p-10 text-2xl text-teal-200 font-semibold">
+            About the Team
+          </div>
           <div className="flex justify-around flex-wrap">
             <div className="max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 m-3">
               <a href="#">
