@@ -67,7 +67,7 @@ const Home = () => {
                 Team
               </a>
               <a
-                href="#responsive-header"
+                href="#ideas"
                 className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
               >
                 Future Ideas
@@ -110,6 +110,19 @@ const Home = () => {
               />
             </form>
             {prediction && <h1>{prediction.message}</h1>}
+          </div>
+        </section>
+
+        <section id="ideas">
+          <div className="p-10 text-2xl font-semibold text-teal-200">
+            Future Ideas
+          </div>
+          <div className="px-14 text-xl">
+            <li>Improve the accuracy of the model .</li>
+            <li>
+              Include action alerts for anomalies detected via sms or call to
+              emergency services .
+            </li>
           </div>
         </section>
 
