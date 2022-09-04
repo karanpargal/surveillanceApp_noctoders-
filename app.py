@@ -41,8 +41,13 @@ def upload():
     sa = (sequences_reconstruction_cost - np.min(sequences_reconstruction_cost)) / np.max(sequences_reconstruction_cost)
     sr = 1.0 - sa
 
-    str_sr = ""
+    threshold= 0.8
+    response= ''
     for i in sr:
-        str_sr+= (str(i)+"\n")
+        if i>=threshold:
+            response= "Anomaly Detected !!!"
+        else:
+            response= "No Anomaly..."
+    print(response)
     
-    return {'message':str_sr}
+    return {'message':response}
