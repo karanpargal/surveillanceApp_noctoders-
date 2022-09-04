@@ -9,6 +9,7 @@ flask-cors = "*"
 pillow = "*"
 tensorflow = "*"
 keras = "*"
+opencv-python = "*"
 
 [dev-packages]
 
