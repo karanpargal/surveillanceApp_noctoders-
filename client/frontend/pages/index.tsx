@@ -2,10 +2,6 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
-import navbar from "../components/home/navbar";
-import about from "../components/home/about";
-import team from "../components/home/team";
-
 const Home: NextPage = () => {
   return (
     <div>
@@ -63,6 +59,98 @@ const Home: NextPage = () => {
             </div>
           </div>
         </nav>
+
+        <section>
+          <div className="p-10 text-2xl">About the Project</div>
+          <div></div>
+        </section>
+
+        <section>
+          <div className="p-10 text-2xl">About the Team</div>
+          <div className="flex justify-around flex-wrap">
+            <div className="max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 m-5">
+              <a href="#">
+                <img
+                  className="rounded-t-lg"
+                  src="/docs/images/blog/image-1.jpg"
+                  alt=""
+                />
+              </a>
+              <div className="p-5">
+                <a href="#">
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Karan Pargal
+                  </h5>
+                </a>
+                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  CSe student at SRM University || ML Enthusiast || Member @
+                  Next Tech Lab || Technical Lead @GitHub Community SRM
+                </p>
+              </div>
+            </div>
+            <div className="max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 m-5">
+              <a href="#">
+                <img
+                  className="rounded-t-lg"
+                  src="/docs/images/blog/image-1.jpg"
+                  alt=""
+                />
+              </a>
+              <div className="p-5">
+                <a href="#">
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Utkarsh Rastogi
+                  </h5>
+                </a>
+                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  CGI & VFX artist | Editorial Lead at SRMKZILLA | Associate at
+                  Next Tech Lab
+                </p>
+              </div>
+            </div>
+            <div className="max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 m-5">
+              <a href="#">
+                <img
+                  className="rounded-t-lg"
+                  src="/docs/images/blog/image-1.jpg"
+                  alt=""
+                />
+              </a>
+              <div className="p-5">
+                <a href="#">
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Pranav Gupta
+                  </h5>
+                </a>
+                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  Syndicate at Next Tech Lab, AI/ML Researcher and Engineer,
+                  Computer Vision Enthusiast
+                </p>
+              </div>
+            </div>
+            <div className="max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 m-5">
+              <a href="#">
+                <img
+                  className="rounded-t-lg"
+                  src="/docs/images/blog/image-1.jpg"
+                  alt=""
+                />
+              </a>
+              <div className="p-5">
+                <a href="#">
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Sarthak Sachdeva
+                  </h5>
+                </a>
+                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  backend developer Intern at CGS || Member @Alexa developers
+                  SRM || Technical Lead @GitHub Community SRM || Member @MLSA
+                  SRM
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
     </div>
   );

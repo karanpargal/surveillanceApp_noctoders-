@@ -1,5 +1,5 @@
-const team = () => {
-  return <>My team </>;
+const teamPage = () => {
+  return <div>Team</div>;
 };
 
-export default team;
+export default teamPage;
