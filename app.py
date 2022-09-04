@@ -4,6 +4,7 @@ from flask import Flask, request
 from flask_cors import CORS
 from keras.models import load_model
 from PIL import Image, ImageOps
+import cv2 as cv
 
 app = Flask(__name__) # new
 CORS(app) # new
@@ -12,6 +13,19 @@ CORS(app) # new
 def upload():
     model = load_model('model/model.h5', compile=False)
     test_dir='./test_seq'
+    vidreq=request.files['file']
+    filepath='./test_seq/video_file.mp4'
+    vidreq.save(filepath)
+    print("File saved")
+    vidcap=cv.VideoCapture(filepath)
+    success, image=vidcap.read()
+    count = 0
+    while success and count!=200:
+        image = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
+        cv.imwrite("test_seq/image_%d.tif" % count, image)    
+        success, image = vidcap.read()
+        print('Saved image ', count)
+        count += 1
     frames = np.zeros(shape=(20, 10, 128, 128, 1))
     count=0
     for img_name in sorted(os.listdir(test_dir)):
