@@ -119,12 +119,12 @@ const Home = () => {
         <section>
           <div className="p-10 text-2xl">About the Team</div>
           <div className="flex justify-around flex-wrap">
-            <div className="max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 m-5">
+            <div className="max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 m-3">
               <a href="#">
                 <img
                   className="rounded-t-lg"
-                  src="/docs/images/blog/image-1.jpg"
-                  alt=""
+                  src="https://shockwave24.s3.ap-south-1.amazonaws.com/karan.png"
+                  alt="karan"
                 />
               </a>
               <div className="p-5">
@@ -139,11 +139,11 @@ const Home = () => {
                 </p>
               </div>
             </div>
-            <div className="max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 m-5">
+            <div className="max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 m-3">
               <a href="#">
                 <img
                   className="rounded-t-lg"
-                  src="/docs/images/blog/image-1.jpg"
+                  src="https://shockwave24.s3.ap-south-1.amazonaws.com/utkarsh.png"
                   alt=""
                 />
               </a>
@@ -159,11 +159,11 @@ const Home = () => {
                 </p>
               </div>
             </div>
-            <div className="max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 m-5">
+            <div className="max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 m-3">
               <a href="#">
                 <img
                   className="rounded-t-lg"
-                  src="/docs/images/blog/image-1.jpg"
+                  src="https://shockwave24.s3.ap-south-1.amazonaws.com/pranav.png"
                   alt=""
                 />
               </a>
@@ -179,11 +179,11 @@ const Home = () => {
                 </p>
               </div>
             </div>
-            <div className="max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 m-5">
+            <div className="max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 m-3">
               <a href="#">
                 <img
                   className="rounded-t-lg"
-                  src="/docs/images/blog/image-1.jpg"
+                  src="https://shockwave24.s3.ap-south-1.amazonaws.com/sarthak.png"
                   alt=""
                 />
               </a>
