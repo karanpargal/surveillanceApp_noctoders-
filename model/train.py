@@ -81,14 +81,9 @@ def get_model(reload_model=True):
     seq.add(LayerNormalization())
     seq.add(TimeDistributed(Conv2D(64, (5, 5), strides=2, padding="same")))
     seq.add(LayerNormalization())
-    # # # # #
     seq.add(ConvLSTM2D(64, (3, 3), padding="same", return_sequences=True))
     seq.add(LayerNormalization())
     seq.add(ConvLSTM2D(32, (3, 3), padding="same", return_sequences=True))
-    seq.add(LayerNormalization())
-    seq.add(ConvLSTM2D(64, (3, 3), padding="same", return_sequences=True))
-    seq.add(LayerNormalization())
-    # # # # #
     seq.add(TimeDistributed(Conv2DTranspose(64, (5, 5), strides=2, padding="same")))
     seq.add(LayerNormalization())
     seq.add(TimeDistributed(Conv2DTranspose(128, (11, 11), strides=4, padding="same")))
